@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="./assets/Moviestack_favicon.png" />
     <title>Movies</title>
 </head>
-<body>
-    <header class="md:fixed md:w-full bg-black h-[130px] xl:py-3">
-        <div class="md:flex md:justify-center">
-            <div class="flex w-[60%] xl:h-full">
-                <img src="./assets/images/Moviestack_isotipo.png" class="w-[80px]" alt="">
-                <img src="./assets/images/Moviestack_logotipo2.png" class="w-[500px]" alt="">
+<body class="flex flex-col"><div></div>
+    <header class="flex gap-5 w-full lg:h-[120px] sm:py-3 border-b-2 border-b-[#242424] bg-black">
+        <div class="flex flex-wrap content-center sm:w-[75%] sm:justify-center lg:justify-between m-auto">
+            <div class="flex items-center xl:h-full pr-5">
+                <a href="./index.html"><img src="./assets/images/Moviestack_isotipo.png" class="w-[80px] m-auto" alt=""></a>
+                <a href="./index.html"><img src="./assets/images/Moviestack_logotipo2.png" class="hidden sm:block w-[300px] m-auto" alt=""></a>
             </div>
-            <nav class="flex text-white items-center gap-10">
-                <a href="./index.html">HOME</a>
-                <a href="#">MOVIES</a>
-                <a href="">FAVS</a>
+            <nav class="flex texto-blanco items-center gap-10">
+                <a href="./index.html" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e]">HOME</a>
+                <a href="#" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] bg-[#242424]">MOVIES</a>
+                <a href="#" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e]">FAVS</a>
             </nav>
         </div>
     </header>
+    <main class="bg-[#09090b]">
+        <div>
+            <img class="opacity-80" src="./assets/images/banner-movies.png" alt="">
+        </div>
+        <div id="contenedor-main" class="flex flex-wrap gap-10 justify-center py-5">
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="bg-black texto-blanco sm:h-[100px]">
+            <h2 class="px-10 py-5 text-center border-t-2 border-t-[#242424]">Galeano Pablo - Mindhub ©</h2>
+        </div>
+    </footer>
 
     <script src="./data.js"></script>
     <script src="./movies.js"></script>
