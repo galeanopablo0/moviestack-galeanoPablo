@@ -1,3 +1,5 @@
+import { peliculas } from './data.js';
+
 const urlParams = new URLSearchParams(location.search)
 const $main = document.getElementById('contenedor-details')
 const id = urlParams.get('id')
