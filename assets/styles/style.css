@@ -9,7 +9,7 @@
 }
 
 html{
-    scroll-padding-top: 9rem;
+    scroll-padding-top: 6rem;
     scroll-behavior: smooth;
     background-color: #09090b;
 
@@ -28,7 +28,6 @@ html::-webkit-scrollbar-thumb{
     border-radius: 5rem;
 }
 
-.texto-blanco{
+.text-white-style{
     color:#dbdbdb;
-    /* background-color: #1a1a1f; */
 }

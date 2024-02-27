@@ -15,7 +15,7 @@
                 <a href="./index.html"><img src="./assets/images/Moviestack_isotipo.png" class="w-[80px] m-auto" alt=""></a>
                 <a href="./index.html"><img src="./assets/images/Moviestack_logotipo2.png" class="hidden sm:block w-[300px] m-auto" alt=""></a>
             </div>
-            <nav class="flex texto-blanco items-center gap-10">
+            <nav class="flex text-white-style items-center gap-10">
                 <a href="./index.html" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e]">HOME</a>
                 <a href="#" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] bg-[#242424]">MOVIES</a>
                 <a href="#" class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e]">FAVS</a>
@@ -24,16 +24,26 @@
     </header>
     <main class="bg-[#09090b]">
         <div>
-            <img class="opacity-80" src="./assets/images/banner-movies.png" alt="">
+            <img class="opacity-80 h-[15vh] md:h-full object-cover" src="./assets/images/banner-movies.png" alt="">
         </div>
-        <div id="contenedor-main" class="flex flex-wrap gap-10 justify-center py-5">
+        <div class="flex md:w-full justify-center px-3 md:gap-10 pt-6">
+            <select class="p-1 md:pr-10 mr-5" name="genre" id="genreId">
+                <option value="genres">All Genres</option>
+                
+            </select>
+
+            <label for="searchInput">
+                <input class="p-1 pl-2 pr-10 ml-10" placeholder="Search..." id="searchInput" type="text">
+            </label>
+        </div>
+        <div id="contenedor-main" class="flex flex-wrap gap-10 justify-center py-5 pb-10">
 
         </div>
     </main>
 
     <footer>
-        <div class="bg-black texto-blanco sm:h-[100px]">
-            <h2 class="px-10 py-5 text-center border-t-2 border-t-[#242424]">Galeano Pablo - Mindhub ©</h2>
+        <div class="bg-black text-white-style sm:h-[100px]">
+            <h2 class="px-10 py-5 text-center border-t-2 border-t-[#242424]">Galeano Pablo - Mindhub B2B050 ©</h2>
         </div>
     </footer>
 
