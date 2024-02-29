@@ -7,7 +7,8 @@ function crearTarjeta(pelicula) {
   article.className = "flex flex-col relative gap-2 w-10/12 p-5 md:w-5/12 xl:w-1/5 border-solid border-4 rounded-3xl bg-[#1a1a1f] border-black text-[#dcdcdc] shadow-[5px_10px_15px_-2px_rgb(0,0,0)] hover:opacity-90 hover:shadow-none"
   
   const imgFavs = document.createElement("img");
-  imgFavs.id = 'off'
+  imgFavs.dataset.favs = 'off'
+  imgFavs.dataset.movieId = `${pelicula.id}`
   imgFavs.setAttribute("src", "./assets/images/favs-off.png") 
   imgFavs.className = "absolute top-2 right-2 w-[12%] cursor-pointer"
 
@@ -64,7 +65,3 @@ const imprimirOpciones = function (array, elemento) {
   });
   elemento.innerHTML = `<option value="all">All genres</option>` + opciones;
 };
-
-const cambiarId = function(){
-
-}
