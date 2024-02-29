@@ -34,7 +34,7 @@ search.addEventListener("input", () => {
   const peliculasFiltradasNombre = filtrarPorNombre(peliculas, search.value); // Se filtra el array completo, y se guarda en la variable un array filtrado por NOMBRE
   const peliculasFiltradasDefinitivo = filtrarPorGenero(peliculasFiltradasNombre,genreSelect.value); //Se filtra el array filtrado por nombre, y se guarda en la variable un nuevo array filtrado por GENERO
   if (genreSelect.value === "all") {
-    imprimirTarjeta(peliculas, main);
+    imprimirTarjeta(peliculasFiltradasNombre, main);
   } else {
     imprimirTarjeta(peliculasFiltradasDefinitivo, main);
   }
@@ -44,25 +44,24 @@ genreSelect.addEventListener("change", () => {
   const peliculasFiltradasNombre = filtrarPorNombre(peliculas, search.value); 
   const peliculasFiltradasDefinitivo = filtrarPorGenero(peliculasFiltradasNombre, genreSelect.value);
   if (genreSelect.value === "all") {
-    imprimirTarjeta(peliculas, main);
+    imprimirTarjeta(peliculasFiltradasNombre, main);
   } else {
     imprimirTarjeta(peliculasFiltradasDefinitivo, main);
   }
 });
 
+
 main.addEventListener("click", (event) => {
   const heartTarget = event.target;
+  const parentHeartTarget = heartTarget.closest('article');
   if (heartTarget.id == 'off'){
-    heartTarget.id = 'on'
-  } else{
-    heartTarget.id = 'off'
-  } 
-  
-  if (heartTarget.id == 'off'){
-    heartTarget.setAttribute("src", "./assets/images/favs-off.png")  
-  } else if (heartTarget.id == 'on'){
     heartTarget.setAttribute("src", "./assets/images/favs-on.png")
-  }
+    heartTarget.id = 'on'
+    localStorage.setItem("article", JSON.stringify(parentHeartTarget))
+  } else if (heartTarget.id == 'on'){
+    heartTarget.id = 'off'
+    heartTarget.setAttribute("src", "./assets/images/favs-off.png")
+  } 
 })
 
 
