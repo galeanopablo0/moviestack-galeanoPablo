@@ -3,13 +3,21 @@ export { crearTarjeta, imprimirTarjeta, imprimirOpciones, filtrarPorNombre, filt
 // Sprint 1
 function crearTarjeta(pelicula) {
 
+  let moviesFavs = localStorage.getItem("moviesFavs") || []
+  let src = "./assets/images/favs-off.png"
+  let dataset = 'off'
+  if (moviesFavs.includes(pelicula.id)){
+    src = "./assets/images/favs-on.png";
+    dataset = 'on';
+  }
+
   const article = document.createElement("article");
   article.className = "flex flex-col relative gap-2 w-10/12 p-5 md:w-5/12 xl:w-1/5 border-solid border-4 rounded-3xl bg-[#1a1a1f] border-black text-[#dcdcdc] shadow-[5px_10px_15px_-2px_rgb(0,0,0)] hover:opacity-90 hover:shadow-none"
   
   const imgFavs = document.createElement("img");
-  imgFavs.dataset.favs = 'off'
+  imgFavs.dataset.favs = dataset
   imgFavs.dataset.movieId = `${pelicula.id}`
-  imgFavs.setAttribute("src", "./assets/images/favs-off.png") 
+  imgFavs.setAttribute("src", src)
   imgFavs.className = "absolute top-2 right-2 w-[12%] cursor-pointer"
 
   const img = document.createElement("img");

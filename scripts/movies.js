@@ -6,6 +6,8 @@ import {
   imprimirOpciones,
 } from "./function.js";
 
+export { peliculas }
+
 const main = document.getElementById("contenedor-main");
 const search = document.getElementById("searchInput");
 const genreSelect = document.getElementById("genreId");
@@ -32,7 +34,7 @@ fetch(url, init)
 
 search.addEventListener("input", () => {
   const peliculasFiltradasNombre = filtrarPorNombre(peliculas, search.value); // Se filtra el array completo, y se guarda en la variable un array filtrado por NOMBRE
-  const peliculasFiltradasGenero = filtrarPorGenero(peliculasFiltradasNombre,genreSelect.value); //Se filtra el array filtrado por nombre, y se guarda en la variable un nuevo array filtrado por GENERO
+  const peliculasFiltradasGenero = filtrarPorGenero(peliculasFiltradasNombre, genreSelect.value); //Se filtra el array filtrado por nombre, y se guarda en la variable un nuevo array filtrado por GENERO
   if (genreSelect.value === "all") {
     imprimirTarjeta(peliculasFiltradasNombre, main);
   } else {
@@ -41,7 +43,7 @@ search.addEventListener("input", () => {
 });
 
 genreSelect.addEventListener("change", () => {
-  const peliculasFiltradasNombre = filtrarPorNombre(peliculas, search.value); 
+  const peliculasFiltradasNombre = filtrarPorNombre(peliculas, search.value);
   const peliculasFiltradasGenero = filtrarPorGenero(peliculasFiltradasNombre, genreSelect.value);
   if (genreSelect.value === "all") {
     imprimirTarjeta(peliculasFiltradasNombre, main);
@@ -50,18 +52,29 @@ genreSelect.addEventListener("change", () => {
   }
 });
 
-let arrayFavs = []
+let arrayFavs = localStorage.getItem("moviesFavs") 
+if (arrayFavs){
+  arrayFavs = JSON.parse(arrayFavs)
+} else {
+  arrayFavs = []
+}
+
 main.addEventListener("click", (event) => {
   const heartTarget = event.target;
-  if (heartTarget.dataset.favs == 'off'){
-    heartTarget.setAttribute("src", "./assets/images/favs-on.png")
-    heartTarget.dataset.favs = 'on'
-    arrayFavs.push(heartTarget.dataset.movieId)
-    console.log(arrayFavs)
-  } else if (heartTarget.dataset.favs == 'on'){
-    heartTarget.dataset.favs = 'off'
-    heartTarget.setAttribute("src", "./assets/images/favs-off.png")
-    arrayFavs = arrayFavs.filter(fav => fav != heartTarget.dataset.movieId)
-    console.log(arrayFavs)
-  } 
-})
+  if (heartTarget.dataset.favs == "off") {
+    heartTarget.setAttribute("src", "./assets/images/favs-on.png");
+    heartTarget.dataset.favs = "on";
+
+    arrayFavs.push(heartTarget.dataset.movieId);
+    console.log(arrayFavs);
+    localStorage.setItem("moviesFavs", JSON.stringify(arrayFavs));
+  } else if (heartTarget.dataset.favs == "on") {
+    heartTarget.dataset.favs = "off";
+    heartTarget.setAttribute("src", "./assets/images/favs-off.png");
+
+    arrayFavs = arrayFavs.filter((fav) => fav != heartTarget.dataset.movieId);
+    console.log(arrayFavs);
+    localStorage.setItem("moviesFavs", JSON.stringify(arrayFavs));
+  }
+});
+

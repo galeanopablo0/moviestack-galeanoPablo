@@ -21,7 +21,7 @@ fetch(url, init)
     // Se debe utilizar el link correspondiente antes del ${}, en este caso https://moviestack.onrender.com/static/${peliculaEncontrada.image} para evitar el error de undefined.
 
     $main.innerHTML = `
-        <div class="flex flex-col items-center py-10 text-white-style">
+        <div class="flex flex-col items-center pt-10 text-white-style">
             <div class="flex flex-col xl:flex-row items-center w-[70%] gap-10">
                 <div>
                     <img class="md:w-[700px] h-100 border-2 border-black object-fit shadow-[4px_6px_12px_0px_rgba(0,0,0,0.75)]" src="https://moviestack.onrender.com/static/${peliculaFind.image}" alt="Imagen de ${peliculaFind.title}">

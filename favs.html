@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" type="image/x-icon" href="./assets/images/Moviestack_favicon.png" />
-    <title>Home</title>
+    <title>Favs</title>
 </head>
 
 <body>
-    <header class="flex gap-5 sm:fixed w-full lg:h-[120px] sm:py-3 border-b-2 border-b-[#242424] bg-black">
+    <header class="flex gap-5 w-full lg:h-[120px] sm:py-3 border-b-2 border-b-[#242424] bg-black">
         <div class="flex flex-wrap content-center sm:w-[75%] sm:justify-center lg:justify-between m-auto">
             <div class="flex items-center xl:h-full pr-5">
                 <a href="./index.html"><img src="./assets/images/Moviestack_isotipo.png" class="w-[80px] m-auto"
@@ -20,18 +20,26 @@
                         class="hidden sm:block w-[300px] m-auto" alt=""></a>
             </div>
             <nav class="flex text-white-style items-center gap-10">
-                <a href="#"
-                    class="sm:p-2 text-xl border-2 rounded-l border-[#242424] bg-[#242424] hover:p-[0.45rem]">HOME</a>
+                <a href="./index.html"
+                    class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e] hover:p-[0.45rem]">HOME</a>
                 <a href="./movies.html"
                     class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e] hover:p-[0.45rem]">MOVIES</a>
                 <a href="#"
-                    class="sm:p-2 text-xl border-2 rounded-l border-[#242424] hover:bg-[#18181e] hover:p-[0.45rem]">FAVS</a>
+                    class="sm:p-2 text-xl border-2 rounded-l border-[#242424] bg-[#242424] hover:p-[0.45rem]">FAVS</a>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main class="bg-[#09090b] min-h-screen">
+        <div>
+            <img class="opacity-80 h-[15vh] md:h-full object-cover" src="./assets/images/favorites-banner.png" alt="">
+        </div>
+        <div id="divTexto">
+            
+        </div>
+        <div id="contenedor-favs-main" class="flex flex-wrap gap-10 justify-center py-5 pb-10">
 
+        </div>
     </main>
 
     <footer>
@@ -39,6 +47,8 @@
             <h2 class="p-10 text-center border-t-2 border-t-[#242424]">Galeano Pablo - Mindhub B2B050 ©</h2>
         </div>
     </footer>
+
+    <script type="module" src="./scripts/favs.js"></script>
 </body>
 
 </html>
