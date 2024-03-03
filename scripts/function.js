@@ -1,4 +1,4 @@
-export { crearTarjeta, imprimirTarjeta, imprimirOpciones, filtrarPorNombre, filtrarPorGenero }
+export { crearTarjeta, imprimirTarjeta, imprimirOpciones, filtrarPorNombre, filtrarPorGenero, imprimirTexto }
 
 // Sprint 1
 function crearTarjeta(pelicula) {
@@ -73,3 +73,25 @@ const imprimirOpciones = function (array, elemento) {
   });
   elemento.innerHTML = `<option value="all">All genres</option>` + opciones;
 };
+
+function imprimirTexto() {
+  const divTexto = document.getElementById("divTexto");
+  divTexto.className = "text-2xl text-center py-10 text-white-style"
+
+  const p = document.createElement("p");
+  p.textContent = "You haven't added any movies to favorites yet";
+  divTexto.appendChild(p);
+
+  const divBoton = document.getElementById("divBoton")
+  divBoton.className = "text-center"
+
+  const aBoton = document.createElement("a")
+  aBoton.href = `./movies.html`
+
+  const boton = document.createElement("button");
+  boton.id = "botonId"
+  boton.className = "text-3xl text-center bg-[#1a1a1f] p-4 px-10 text-white-style hover:scale-105 hover:opacity-70"
+  boton.textContent = "Add movies"
+  aBoton.appendChild(boton)
+  divBoton.appendChild(aBoton)
+}
